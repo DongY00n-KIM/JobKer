@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03CE3F6296DDC32002602D3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = B03CE3F5296DDC32002602D3 /* Charts */; };
 		B053085529541FA000909962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085429541FA000909962 /* AppDelegate.swift */; };
 		B053085729541FA000909962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085629541FA000909962 /* SceneDelegate.swift */; };
 		B053085929541FA000909962 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085829541FA000909962 /* MainVC.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03CE3F6296DDC32002602D3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = JobKer;
+			packageProductDependencies = (
+				B03CE3F5296DDC32002602D3 /* Charts */,
+			);
 			productName = JobKer;
 			productReference = B053085129541FA000909962 /* JobKer.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = B053084829541FA000909962;
+			packageReferences = (
+				B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = B053085229541FA000909962 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -602,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B03CE3F5296DDC32002602D3 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B053084929541FA000909962 /* Project object */;
 }
