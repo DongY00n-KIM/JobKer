@@ -24,6 +24,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="131" height="90"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icons8-menu-30"/>
+                                        <connections>
+                                            <segue destination="U7Q-B0-S7e" kind="show" id="AhW-lT-eEZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-Ar-khq">
                                         <rect key="frame" x="131" y="0.0" width="131" height="90"/>
@@ -71,6 +74,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950.38167938931292" y="-27.464788732394368"/>
+        </scene>
+        <!--ApplicationListVC-->
+        <scene sceneID="Ely-Z9-qqS">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ApplicationListVC" storyboardName="ApplicationList" referencedIdentifier="ApplicationListVC" id="U7Q-B0-S7e" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6b3-95-xAF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Wh-Ti-y03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WhN-ex-X7m">

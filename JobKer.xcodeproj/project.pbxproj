@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B03CE3F6296DDC32002602D3 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = B03CE3F5296DDC32002602D3 /* Charts */; };
+		B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */; };
+		B03CE3FA296DDED0002602D3 /* ApplicationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */; };
 		B053085529541FA000909962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085429541FA000909962 /* AppDelegate.swift */; };
 		B053085729541FA000909962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085629541FA000909962 /* SceneDelegate.swift */; };
 		B053085929541FA000909962 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085829541FA000909962 /* MainVC.swift */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListVC.swift; sourceTree = "<group>"; };
+		B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplicationList.storyboard; sourceTree = "<group>"; };
 		B053085129541FA000909962 /* JobKer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobKer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053085429541FA000909962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B053085629541FA000909962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03CE3F6296DDC32002602D3 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,8 @@
 				B053085629541FA000909962 /* SceneDelegate.swift */,
 				B053085829541FA000909962 /* MainVC.swift */,
 				B053085A29541FA000909962 /* Main.storyboard */,
+				B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */,
+				B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */,
 				B053085D29541FA100909962 /* Assets.xcassets */,
 				B053085F29541FA100909962 /* LaunchScreen.storyboard */,
 				B053086229541FA100909962 /* Info.plist */,
@@ -146,7 +150,6 @@
 			);
 			name = JobKer;
 			packageProductDependencies = (
-				B03CE3F5296DDC32002602D3 /* Charts */,
 			);
 			productName = JobKer;
 			productReference = B053085129541FA000909962 /* JobKer.app */;
@@ -221,7 +224,6 @@
 			);
 			mainGroup = B053084829541FA000909962;
 			packageReferences = (
-				B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = B053085229541FA000909962 /* Products */;
 			projectDirPath = "";
@@ -240,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B053086129541FA100909962 /* LaunchScreen.storyboard in Resources */,
+				B03CE3FA296DDED0002602D3 /* ApplicationList.storyboard in Resources */,
 				B053085E29541FA100909962 /* Assets.xcassets in Resources */,
 				B053085C29541FA000909962 /* Main.storyboard in Resources */,
 			);
@@ -269,6 +272,7 @@
 				B053085929541FA000909962 /* MainVC.swift in Sources */,
 				B053085529541FA000909962 /* AppDelegate.swift in Sources */,
 				B053085729541FA000909962 /* SceneDelegate.swift in Sources */,
+				B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,25 +614,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielgindi/Charts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B03CE3F5296DDC32002602D3 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B03CE3F4296DDC32002602D3 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B053084929541FA000909962 /* Project object */;
 }
