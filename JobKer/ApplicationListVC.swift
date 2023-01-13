@@ -12,6 +12,7 @@ class ApplicationListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: .plus, style: .done, target: self, action:)
     }
 }
 

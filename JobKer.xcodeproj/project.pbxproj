@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B034B37C29711BED000CCA89 /* ApplicationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B034B37B29711BED000CCA89 /* ApplicationCell.xib */; };
 		B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */; };
 		B03CE3FA296DDED0002602D3 /* ApplicationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */; };
 		B03CE3FC296DE819002602D3 /* AddApplicationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */; };
 		B03CE3FE296DE822002602D3 /* AddApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03CE3FD296DE822002602D3 /* AddApplication.storyboard */; };
+		B03CE400296E80EF002602D3 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3FF296E80EF002602D3 /* DataFile.swift */; };
 		B053085529541FA000909962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085429541FA000909962 /* AppDelegate.swift */; };
 		B053085729541FA000909962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085629541FA000909962 /* SceneDelegate.swift */; };
 		B053085929541FA000909962 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085829541FA000909962 /* MainVC.swift */; };
@@ -40,10 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B034B37B29711BED000CCA89 /* ApplicationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationCell.xib; sourceTree = "<group>"; };
 		B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListVC.swift; sourceTree = "<group>"; };
 		B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplicationList.storyboard; sourceTree = "<group>"; };
 		B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicationVC.swift; sourceTree = "<group>"; };
 		B03CE3FD296DE822002602D3 /* AddApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddApplication.storyboard; sourceTree = "<group>"; };
+		B03CE3FF296E80EF002602D3 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
 		B053085129541FA000909962 /* JobKer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobKer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053085429541FA000909962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B053085629541FA000909962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */,
 				B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */,
 				B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */,
+				B034B37B29711BED000CCA89 /* ApplicationCell.xib */,
+				B03CE3FF296E80EF002602D3 /* DataFile.swift */,
 				B03CE3FD296DE822002602D3 /* AddApplication.storyboard */,
 				B053085D29541FA100909962 /* Assets.xcassets */,
 				B053085F29541FA100909962 /* LaunchScreen.storyboard */,
@@ -247,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B034B37C29711BED000CCA89 /* ApplicationCell.xib in Resources */,
 				B053086129541FA100909962 /* LaunchScreen.storyboard in Resources */,
 				B03CE3FA296DDED0002602D3 /* ApplicationList.storyboard in Resources */,
 				B03CE3FE296DE822002602D3 /* AddApplication.storyboard in Resources */,
@@ -281,6 +288,7 @@
 				B053085529541FA000909962 /* AppDelegate.swift in Sources */,
 				B053085729541FA000909962 /* SceneDelegate.swift in Sources */,
 				B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */,
+				B03CE400296E80EF002602D3 /* DataFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
