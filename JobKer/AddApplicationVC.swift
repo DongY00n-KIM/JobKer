@@ -24,8 +24,8 @@ class AddApplicationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        positionPicker.dataSource = self
-        positionPicker.delegate = self
+//        positionPicker.dataSource = self
+//        positionPicker.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Add", style: .done, target: self, action: #selector(addResume))
     }
     
@@ -35,19 +35,19 @@ class AddApplicationVC: UIViewController {
 }
 
 
-extension AddApplicationVC: UIPickerViewDataSource{
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return positions.count
-    }
-}
-
-extension AddApplicationVC: UIPickerViewDelegate{
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return positions[row]
-    }
-}
+//extension AddApplicationVC: UIPickerViewDataSource{
+//    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//
+//    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return positions.count
+//    }
+//}
+//
+//extension AddApplicationVC: UIPickerViewDelegate{
+//    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return positions[row]
+//    }
+//}
 
