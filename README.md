@@ -3,4 +3,3 @@ Users can add a date when he or she applied for the job, company name, job title
 
 # Team Members
 DongYoon Kim (dongyoon.roy.kim@gmail.com, [LinkedIn](https://www.linkedin.com/in/dongyoon-kim/))<br>
-JiHoon Kim (@gmail.com)
