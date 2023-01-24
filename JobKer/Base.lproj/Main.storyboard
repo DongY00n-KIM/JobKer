@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dho-Ly-MXM">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,30 +14,30 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="JobKer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yln-OC-HSn">
-                                <rect key="frame" x="0.0" y="728" width="393" height="90"/>
+                                <rect key="frame" x="21" y="468" width="299" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-I7-AUL">
-                                        <rect key="frame" x="0.0" y="0.0" width="131" height="90"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwD-I7-AUL" userLabel="menuBtn">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icons8-menu-30"/>
                                         <connections>
                                             <segue destination="U7Q-B0-S7e" kind="show" id="AhW-lT-eEZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-Ar-khq">
-                                        <rect key="frame" x="131" y="0.0" width="131" height="90"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-Ar-khq" userLabel="fileBtn">
+                                        <rect key="frame" x="99.5" y="0.0" width="100" height="100"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="folder.fill.badge.plus" catalog="system" renderingMode="original"/>
                                         </buttonConfiguration>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnr-dW-osF">
-                                        <rect key="frame" x="262" y="0.0" width="131" height="90"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnr-dW-osF" userLabel="linkedInBtn">
+                                        <rect key="frame" x="199.5" y="0.0" width="99.5" height="100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="icons8-linkedin-2-30"/>
                                         <connections>
@@ -47,26 +47,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="jEk-mO-1dR"/>
-                                    <constraint firstAttribute="width" constant="393" id="ob5-Fd-MMX"/>
+                                    <constraint firstAttribute="height" constant="100" id="tir-wy-7eB"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9a-Cb-6fy">
-                                <rect key="frame" x="0.0" y="63" width="393" height="657"/>
+                                <rect key="frame" x="0.0" y="-24" width="320" height="492"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="393" id="5KW-iQ-e7c"/>
-                                    <constraint firstAttribute="height" constant="657" id="OrP-s5-qte"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Yln-OC-HSn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="3Ru-ap-9cs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="G9a-Cb-6fy" secondAttribute="leading" id="47R-Zz-DB4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G9a-Cb-6fy" secondAttribute="trailing" id="DRw-5E-fRe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yln-OC-HSn" secondAttribute="trailing" id="LbG-Ea-yle"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yln-OC-HSn" secondAttribute="bottom" id="asf-Wg-w7C"/>
-                            <constraint firstItem="Yln-OC-HSn" firstAttribute="top" secondItem="G9a-Cb-6fy" secondAttribute="bottom" constant="8" symbolic="YES" id="gHy-JI-2Cn"/>
+                            <constraint firstItem="Yln-OC-HSn" firstAttribute="top" secondItem="G9a-Cb-6fy" secondAttribute="bottom" id="gHy-JI-2Cn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="G9a-Cb-6fy" secondAttribute="top" constant="68" id="hKU-ET-uXx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sHY-NP-EUo"/>
@@ -91,7 +89,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dho-Ly-MXM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b0N-jp-rk4">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
