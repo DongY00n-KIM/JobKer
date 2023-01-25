@@ -48,13 +48,13 @@
 		B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicationVC.swift; sourceTree = "<group>"; };
 		B03CE3FD296DE822002602D3 /* AddApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddApplication.storyboard; sourceTree = "<group>"; };
 		B03CE3FF296E80EF002602D3 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
+		B03EDC822980CE0F007630EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B03EDC832980CE0F007630EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B053085129541FA000909962 /* JobKer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobKer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053085429541FA000909962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B053085629541FA000909962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B053085829541FA000909962 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		B053085B29541FA000909962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B053085D29541FA100909962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B053086029541FA100909962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B053086229541FA100909962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B053086729541FA100909962 /* JobKerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobKerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B053086B29541FA100909962 /* JobKerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobKerTests.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		B053085A29541FA000909962 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B053085B29541FA000909962 /* Base */,
+				B03EDC822980CE0F007630EF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 		B053085F29541FA100909962 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B053086029541FA100909962 /* Base */,
+				B03EDC832980CE0F007630EF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

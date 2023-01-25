@@ -19,14 +19,45 @@ let status:[String] = [
 
 class AddApplicationVC: UIViewController {
 
-    @IBOutlet weak var positionPicker: UIPickerView!
-    @IBOutlet weak var statusPicker: UIPickerView!
+    @IBOutlet weak var dateField: UITextField!
+    let datePicker = UIDatePicker()
+    let loc = Locale(identifier: "en")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        positionPicker.dataSource = self
-//        positionPicker.delegate = self
+        createDatePicker()
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Add", style: .done, target: self, action: #selector(addResume))
+    }
+    
+    func createToolbar() -> UIToolbar{
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+       //done button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        return toolbar
+    }
+    
+    func createDatePicker() {
+        self.datePicker.locale = loc
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        
+        dateField.textAlignment = .center
+        dateField.inputView = datePicker
+        dateField.inputAccessoryView = createToolbar()
+    }
+    
+    @objc func donePressed(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        self.dateField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
     
     @objc fileprivate func addResume(sender: UIBarButtonItem){
