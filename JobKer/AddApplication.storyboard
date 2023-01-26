@@ -138,6 +138,7 @@
                     </view>
                     <connections>
                         <outlet property="dateField" destination="eWd-Sx-gW0" id="maF-gq-5QL"/>
+                        <outlet property="positionField" destination="2MU-ZY-Dja" id="28k-YJ-w7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
