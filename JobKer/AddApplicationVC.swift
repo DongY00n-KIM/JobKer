@@ -14,16 +14,25 @@ let positions:[String] = [
 ]
 
 let status:[String] = [
-   "InProgress", "Rejected", "Accepted"
+   "In Progress", "Rejected", "Accepted"
 ]
 
 class AddApplicationVC: UIViewController {
 
+    //textField vars
+    @IBOutlet weak var referralField: UITextField!
+    @IBOutlet weak var statusField: UITextField!
+    @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var positionField: UITextField!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var locationField: UITextField!
+    
+    //picker vars
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
+    
     let loc = Locale(identifier: "en")
+    
     enum applicationAddInfoType{
         case positions
         case location
@@ -32,14 +41,54 @@ class AddApplicationVC: UIViewController {
         case referral
     }
     
+//    var selectedApplicationAddInfoType : String? = nil
+    var textFieldType : applicationAddInfoType? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
         createPositionPicker()
+        createStatusPicker()
         pickerView.dataSource = self
         pickerView.delegate = self
         
+        //add Target for each textfiled.
+        positionField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
+        locationField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
+        typeField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
+        statusField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
+        referralField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Add", style: .done, target: self, action: #selector(addResume))
+    }
+    
+    //check what which textfield is selected.
+    @objc fileprivate func textFieldTypeSelector(_ textField : UITextField){
+        if textField == positionField{
+            print("position Field selected")
+            textFieldType = .positions
+        }
+        else if textField == locationField {
+            print("locationField selected")
+            textFieldType = .location
+        }
+        else if textField == typeField {
+            print("typeField selected")
+            textFieldType = .type
+        }
+        else if textField == statusField {
+            print("statusField Selected")
+            textFieldType = .status
+        }
+        else if textField == referralField {
+            print("referral field selected")
+            textFieldType = .referral
+        }
+        else{
+            print("nil selected")
+            textFieldType = nil
+        }
+        
     }
     
     @objc fileprivate func addResume(sender: UIBarButtonItem){
@@ -54,16 +103,50 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return positions.count
+        if textFieldType == .positions{
+            return positions.count
+        }
+        else if textFieldType == .location {
+            
+        }
+        else if textFieldType == .type {
+            
+        }
+        else if textFieldType == .status {
+            return status.count
+        }
+        else if textFieldType == .referral {
+            
+        }
+        return 0
     }
    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return positions[row]
+        if textFieldType == .positions{
+            return positions[row]
+        }
+        else if textFieldType == .location {
+            
+        }
+        else if textFieldType == .type {
+            
+        }
+        else if textFieldType == .status {
+            return status[row]
+        }
+        else if textFieldType == .referral {
+            
+        }
+        return nil
     }
     
     func createPositionPicker(){
         positionField.inputView = pickerView
         positionField.inputAccessoryView = createToolbar()
+    }
+    func createStatusPicker(){
+        statusField.inputView = pickerView
+        statusField.inputAccessoryView = createToolbar()
     }
 }
 
@@ -82,72 +165,42 @@ extension AddApplicationVC {
 
 //creating date picker and toolbar for it.
 extension AddApplicationVC{
+    
     //create toolbar
     func createToolbar() -> UIToolbar{
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
-       //done button
-        
+        //done button
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-//        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(select))
         
         toolbar.setItems([doneBtn], animated: true)
         return toolbar
     }
     
     @objc func donePressed(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateField.text = dateFormatter.string(from: datePicker.date)
+        if textFieldType == .positions{
+            
+        }
+        else if textFieldType == .location {
+            
+        }
+        else if textFieldType == .type {
+            
+        }
+        else if textFieldType == .status {
+            
+        }
+        else if textFieldType == .referral {
+            
+        }
+        else{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateField.text = dateFormatter.string(from: datePicker.date)
+        }
         self.view.endEditing(true)
+        textFieldType = nil
     }
-    
-//    @objc func donePressed(_ pickerSelector : Int){
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        dateFormatter.timeStyle = .none
-//        dateField.text = dateFormatter.string(from: datePicker.date)
-//        self.view.endEditing(true)
-//    }
 }
-
-//
-//func doneButtonClass(_ pickerSelector : Int) {
-//    let pickerSelector : Int = pickerSelector
-//
-//    @objc func donePressed(){
-//        switch pickerSelector {
-//            case 1 :
-//            break
-//        case 2:
-//                let dateFormatter = DateFormatter()
-//                dateFormatter.dateStyle = .medium
-//                dateFormatter.timeStyle = .none
-//                dateField.text = dateFormatter.string(from: datePicker.date)
-//                self.view.endEditing(true)
-//            break
-//        }
-//}
-    
-//function when done button pressed
-
-
-
-//extension AddApplicationVC: UIPickerViewDataSource{
-//    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//
-//    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return positions.count
-//    }
-//}
-//
-//extension AddApplicationVC: UIPickerViewDelegate{
-//    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return positions[row]
-//    }
-//}
-
