@@ -7,8 +7,5 @@
 
 import Foundation
 
-struct PositionData{
-    let positions:[String] = [
-        "SoftWate Development", "IT Services and IT Consultion", "Computer and Network Security", "Telecommunications", "Technology", "Information and Internet"
-    ]
+class DataFile{
 }

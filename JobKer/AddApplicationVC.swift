@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+//data arrays
 let positions:[String] = [
     "FrontEnd", "BackEnd", "Cloud Developer","Web Developer", "SoftWate Development", "IT Services and IT Consultion", "Computer and Network Security"
 ]
@@ -16,6 +17,44 @@ let positions:[String] = [
 let status:[String] = [
    "In Progress", "Rejected", "Accepted"
 ]
+
+let type:[String] = [
+    "Intern", "Contract", "Full-Time", "Part-Time"
+]
+
+let referral:[String] = [
+    "No", "Yes"
+]
+
+let locations:[String] = [
+    "AL", "AK",
+    "AZ", "AR",
+    "CA", "CO",
+    "CT", "DE",
+    "FL", "GA",
+    "HI", "ID",
+    "IL", "IN",
+    "IA", "KS",
+    "KY", "LA",
+    "ME", "MD",
+    "MA", "MI",
+    "MN", "MS",
+    "MO", "MT",
+    "NE", "NV",
+    "NH", "NJ",
+    "NM", "NY",
+    "NY", "NC",
+    "ND", "OH",
+    "OK", "OR",
+    "PA", "RI",
+    "SC", "SD",
+    "TN", "TX",
+    "UT", "VT",
+    "VA", "WA",
+    "WV", "WI",
+    "WY", "Remote"
+]
+
 
 class AddApplicationVC: UIViewController {
 
@@ -49,6 +88,9 @@ class AddApplicationVC: UIViewController {
         createDatePicker()
         createPositionPicker()
         createStatusPicker()
+        createLocationPicker()
+        createReferralPicker()
+        createTypePicker()
         pickerView.dataSource = self
         pickerView.delegate = self
         
@@ -107,16 +149,16 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
             return positions.count
         }
         else if textFieldType == .location {
-            
+            return locations.count
         }
         else if textFieldType == .type {
-            
+            return type.count
         }
         else if textFieldType == .status {
             return status.count
         }
         else if textFieldType == .referral {
-            
+            return referral.count
         }
         return 0
     }
@@ -126,16 +168,16 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
             return positions[row]
         }
         else if textFieldType == .location {
-            
+            return locations[row]
         }
         else if textFieldType == .type {
-            
+            return type[row]
         }
         else if textFieldType == .status {
             return status[row]
         }
         else if textFieldType == .referral {
-            
+            return referral[row]
         }
         return nil
     }
@@ -147,6 +189,18 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
     func createStatusPicker(){
         statusField.inputView = pickerView
         statusField.inputAccessoryView = createToolbar()
+    }
+    func createLocationPicker(){
+        locationField.inputView = pickerView
+        locationField.inputAccessoryView = createToolbar()
+    }
+    func createTypePicker(){
+        typeField.inputView = pickerView
+        typeField.inputAccessoryView = createToolbar()
+    }
+    func createReferralPicker(){
+        referralField.inputView = pickerView
+        referralField.inputAccessoryView = createToolbar()
     }
 }
 
