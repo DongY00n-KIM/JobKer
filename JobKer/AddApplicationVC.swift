@@ -24,6 +24,7 @@ class AddApplicationVC: UIViewController {
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
     let loc = Locale(identifier: "en")
+    
     enum applicationAddInfoType{
         case positions
         case location
