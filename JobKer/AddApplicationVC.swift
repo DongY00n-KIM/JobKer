@@ -11,7 +11,7 @@ import Foundation
 
 //data arrays
 let positions:[String] = [
-    "FrontEnd", "BackEnd", "Cloud Developer","Web Developer", "SoftWate Development", "IT Services and IT Consultion", "Computer and Network Security"
+    "FrontEnd", "BackEnd", "Cloud Developer", "Web Developer", "Software Development", "IT Services and IT Consultion", "Computer and Network Security"
 ]
 
 let status:[String] = [
@@ -69,6 +69,7 @@ class AddApplicationVC: UIViewController {
     //picker vars
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
+    var index : Int = 0
     
     let loc = Locale(identifier: "en")
     
@@ -164,6 +165,7 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
     }
    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         if textFieldType == .positions{
             return positions[row]
         }
@@ -181,26 +183,8 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
         }
         return nil
     }
-    
-    func createPositionPicker(){
-        positionField.inputView = pickerView
-        positionField.inputAccessoryView = createToolbar()
-    }
-    func createStatusPicker(){
-        statusField.inputView = pickerView
-        statusField.inputAccessoryView = createToolbar()
-    }
-    func createLocationPicker(){
-        locationField.inputView = pickerView
-        locationField.inputAccessoryView = createToolbar()
-    }
-    func createTypePicker(){
-        typeField.inputView = pickerView
-        typeField.inputAccessoryView = createToolbar()
-    }
-    func createReferralPicker(){
-        referralField.inputView = pickerView
-        referralField.inputAccessoryView = createToolbar()
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        index = row
     }
 }
 
@@ -219,6 +203,32 @@ extension AddApplicationVC {
 
 //creating date picker and toolbar for it.
 extension AddApplicationVC{
+    //create pickers for each cases.
+    func createPositionPicker(){
+        positionField.inputView = pickerView
+        positionField.inputAccessoryView = createToolbar()
+        positionField.textAlignment = .center
+    }
+    func createStatusPicker(){
+        statusField.inputView = pickerView
+        statusField.inputAccessoryView = createToolbar()
+        statusField.textAlignment = .center
+    }
+    func createLocationPicker(){
+        locationField.inputView = pickerView
+        locationField.inputAccessoryView = createToolbar()
+        locationField.textAlignment = .center
+    }
+    func createTypePicker(){
+        typeField.inputView = pickerView
+        typeField.inputAccessoryView = createToolbar()
+        typeField.textAlignment = .center
+    }
+    func createReferralPicker(){
+        referralField.inputView = pickerView
+        referralField.inputAccessoryView = createToolbar()
+        referralField.textAlignment = .center
+    }
     
     //create toolbar
     func createToolbar() -> UIToolbar{
@@ -233,20 +243,21 @@ extension AddApplicationVC{
     }
     
     @objc func donePressed(){
+        
         if textFieldType == .positions{
-            
+            positionField.text = positions[index]
         }
         else if textFieldType == .location {
-            
+            locationField.text = locations[index]
         }
         else if textFieldType == .type {
-            
+            typeField.text = type[index]
         }
         else if textFieldType == .status {
-            
+            statusField.text = status[index]
         }
         else if textFieldType == .referral {
-            
+            referralField.text = referral[index]
         }
         else{
             let dateFormatter = DateFormatter()
