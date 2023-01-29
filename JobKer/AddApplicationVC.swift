@@ -266,6 +266,7 @@ extension AddApplicationVC{
             dateField.text = dateFormatter.string(from: datePicker.date)
         }
         self.view.endEditing(true)
+        index = 0
         textFieldType = nil
     }
 }
