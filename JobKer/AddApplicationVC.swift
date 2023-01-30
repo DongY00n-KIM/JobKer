@@ -9,13 +9,52 @@
 import UIKit
 import Foundation
 
+//data arrays
 let positions:[String] = [
-    "FrontEnd", "BackEnd", "Cloud Developer","Web Developer", "SoftWate Development", "IT Services and IT Consultion", "Computer and Network Security"
+    "FrontEnd", "BackEnd", "Cloud Developer", "Web Developer", "Software Development", "IT Services and IT Consultion", "Computer and Network Security"
 ]
 
 let status:[String] = [
    "In Progress", "Rejected", "Accepted"
 ]
+
+let type:[String] = [
+    "Intern", "Contract", "Full-Time", "Part-Time"
+]
+
+let referral:[String] = [
+    "No", "Yes"
+]
+
+let locations:[String] = [
+    "AL", "AK",
+    "AZ", "AR",
+    "CA", "CO",
+    "CT", "DE",
+    "FL", "GA",
+    "HI", "ID",
+    "IL", "IN",
+    "IA", "KS",
+    "KY", "LA",
+    "ME", "MD",
+    "MA", "MI",
+    "MN", "MS",
+    "MO", "MT",
+    "NE", "NV",
+    "NH", "NJ",
+    "NM", "NY",
+    "NY", "NC",
+    "ND", "OH",
+    "OK", "OR",
+    "PA", "RI",
+    "SC", "SD",
+    "TN", "TX",
+    "UT", "VT",
+    "VA", "WA",
+    "WV", "WI",
+    "WY", "Remote"
+]
+
 
 class AddApplicationVC: UIViewController {
 
@@ -30,8 +69,12 @@ class AddApplicationVC: UIViewController {
     //picker vars
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
+    var index : Int = 0
     
     let loc = Locale(identifier: "en")
+//    var applicationListDelegate : ApplicationListDelegate? = nil
+// it is the same as the code above
+      var applicationListDelegate : ApplicationListVC? = nil
     
     enum applicationAddInfoType{
         case positions
@@ -49,6 +92,9 @@ class AddApplicationVC: UIViewController {
         createDatePicker()
         createPositionPicker()
         createStatusPicker()
+        createLocationPicker()
+        createReferralPicker()
+        createTypePicker()
         pickerView.dataSource = self
         pickerView.delegate = self
         
@@ -92,7 +138,14 @@ class AddApplicationVC: UIViewController {
     }
     
     @objc fileprivate func addResume(sender: UIBarButtonItem){
-        
+        print("Add resume")
+        guard let positionToAdd = positionField.text,
+              let statusToAdd = statusField.text,
+              let referralToAdd = referralField.text,
+              let typeToAdd = typeField.text else {return}
+        let applicationToAdd = ApplicationInfo(position: positionToAdd, status: statusToAdd, type: typeToAdd, referral: referralToAdd)
+        applicationListDelegate?.addApplicationInfo(applicationToAdd)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -107,47 +160,44 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
             return positions.count
         }
         else if textFieldType == .location {
-            
+            return locations.count
         }
         else if textFieldType == .type {
-            
+            return type.count
         }
         else if textFieldType == .status {
             return status.count
         }
         else if textFieldType == .referral {
-            
+            return referral.count
         }
         return 0
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        index = row
+    }
    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         if textFieldType == .positions{
             return positions[row]
         }
         else if textFieldType == .location {
-            
+            return locations[row]
         }
         else if textFieldType == .type {
-            
+            return type[row]
         }
         else if textFieldType == .status {
             return status[row]
         }
         else if textFieldType == .referral {
-            
+            return referral[row]
         }
         return nil
     }
     
-    func createPositionPicker(){
-        positionField.inputView = pickerView
-        positionField.inputAccessoryView = createToolbar()
-    }
-    func createStatusPicker(){
-        statusField.inputView = pickerView
-        statusField.inputAccessoryView = createToolbar()
-    }
 }
 
 //creating data picker and toolbar
@@ -165,6 +215,32 @@ extension AddApplicationVC {
 
 //creating date picker and toolbar for it.
 extension AddApplicationVC{
+    //create pickers for each cases.
+    func createPositionPicker(){
+        positionField.inputView = pickerView
+        positionField.inputAccessoryView = createToolbar()
+        positionField.textAlignment = .center
+    }
+    func createStatusPicker(){
+        statusField.inputView = pickerView
+        statusField.inputAccessoryView = createToolbar()
+        statusField.textAlignment = .center
+    }
+    func createLocationPicker(){
+        locationField.inputView = pickerView
+        locationField.inputAccessoryView = createToolbar()
+        locationField.textAlignment = .center
+    }
+    func createTypePicker(){
+        typeField.inputView = pickerView
+        typeField.inputAccessoryView = createToolbar()
+        typeField.textAlignment = .center
+    }
+    func createReferralPicker(){
+        referralField.inputView = pickerView
+        referralField.inputAccessoryView = createToolbar()
+        referralField.textAlignment = .center
+    }
     
     //create toolbar
     func createToolbar() -> UIToolbar{
@@ -179,20 +255,21 @@ extension AddApplicationVC{
     }
     
     @objc func donePressed(){
+        
         if textFieldType == .positions{
-            
+            positionField.text = positions[index]
         }
         else if textFieldType == .location {
-            
+            locationField.text = locations[index]
         }
         else if textFieldType == .type {
-            
+            typeField.text = type[index]
         }
         else if textFieldType == .status {
-            
+            statusField.text = status[index]
         }
         else if textFieldType == .referral {
-            
+            referralField.text = referral[index]
         }
         else{
             let dateFormatter = DateFormatter()
@@ -201,6 +278,7 @@ extension AddApplicationVC{
             dateField.text = dateFormatter.string(from: datePicker.date)
         }
         self.view.endEditing(true)
+        index = 0
         textFieldType = nil
     }
 }
