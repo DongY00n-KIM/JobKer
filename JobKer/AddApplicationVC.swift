@@ -72,6 +72,9 @@ class AddApplicationVC: UIViewController {
     var index : Int = 0
     
     let loc = Locale(identifier: "en")
+//    var applicationListDelegate : ApplicationListDelegate? = nil
+// it is the same as the code above
+      var applicationListDelegate : ApplicationListVC? = nil
     
     enum applicationAddInfoType{
         case positions
@@ -135,7 +138,14 @@ class AddApplicationVC: UIViewController {
     }
     
     @objc fileprivate func addResume(sender: UIBarButtonItem){
-        
+        print("Add resume")
+        guard let positionToAdd = positionField.text,
+              let statusToAdd = statusField.text,
+              let referralToAdd = referralField.text,
+              let typeToAdd = typeField.text else {return}
+        let applicationToAdd = ApplicationInfo(position: positionToAdd, status: statusToAdd, type: typeToAdd, referral: referralToAdd)
+        applicationListDelegate?.addApplicationInfo(applicationToAdd)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -163,6 +173,10 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
         }
         return 0
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        index = row
+    }
    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -183,9 +197,7 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
         }
         return nil
     }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        index = row
-    }
+    
 }
 
 //creating data picker and toolbar

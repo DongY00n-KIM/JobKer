@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="AWl-Dd-qUg">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ApplicationCellVC" rowHeight="80" id="AWl-Dd-qUg" customClass="ApplicationCellVC" customModule="JobKer" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="385" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AWl-Dd-qUg" id="2lC-Fs-Tuw">
@@ -81,6 +81,13 @@
                     <constraint firstItem="pKY-6Q-4xW" firstAttribute="leading" secondItem="2lC-Fs-Tuw" secondAttribute="leading" constant="10" id="cYV-xX-dbJ"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="companyCell" destination="tTm-Qb-7mm" id="gr3-DL-JKw"/>
+                <outlet property="dateCell" destination="DgQ-ut-Bot" id="1Qd-sb-CAg"/>
+                <outlet property="editBtnCell" destination="Pet-9P-6RJ" id="gPM-4k-4Pl"/>
+                <outlet property="positionCell" destination="9Z8-zN-Jby" id="0uC-5A-Xww"/>
+                <outlet property="statusCell" destination="lLu-Vp-JoI" id="4AR-7s-Asx"/>
+            </connections>
             <point key="canvasLocation" x="11.450381679389313" y="-29.577464788732396"/>
         </tableViewCell>
         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="jL9-q0-YEX">
