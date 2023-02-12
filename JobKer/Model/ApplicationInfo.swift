@@ -12,8 +12,9 @@ struct ApplicationInfo{
     var position : String
     var status : String
     var type : String
-//    var date : String
+    var date : String
 //    var location : String // [String]
     var referral : String
 //    var salary : String
+    var companyName : String
 }

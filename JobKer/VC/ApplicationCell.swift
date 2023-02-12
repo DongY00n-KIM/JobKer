@@ -48,8 +48,7 @@ extension UITableViewCell : getNibID{}
 //    }
 //}
 
-class ApplicationCellVC : UITableViewCell{
-//    static let cellID = "ApplicationCellVC"
+class ApplicationCell : UITableViewCell{
     
     @IBOutlet weak var companyCell: UILabel!
     @IBOutlet weak var statusCell: UILabel!
@@ -59,6 +58,6 @@ class ApplicationCellVC : UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("awakeFromNib")
+        print(#fileID, #function, #line, "- <#comment#>")
     }
 }

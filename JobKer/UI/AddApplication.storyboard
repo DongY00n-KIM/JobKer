@@ -142,8 +142,10 @@
                     <connections>
                         <outlet property="dateField" destination="eWd-Sx-gW0" id="JFj-gA-Idh"/>
                         <outlet property="locationField" destination="hnz-GC-LES" id="h6Z-OM-uvN"/>
+                        <outlet property="nameField" destination="9sI-r5-XSC" id="hxS-jS-aI0"/>
                         <outlet property="positionField" destination="2MU-ZY-Dja" id="28k-YJ-w7a"/>
                         <outlet property="referralField" destination="YDa-mP-fnS" id="gnr-XC-qHq"/>
+                        <outlet property="salaryField" destination="Fd7-uH-VSh" id="fzS-yU-giq"/>
                         <outlet property="statusField" destination="NVK-XM-NuJ" id="jUl-f3-uAr"/>
                         <outlet property="typeField" destination="oSx-AK-8wj" id="nLm-R6-niO"/>
                     </connections>

@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		B033C6B129870F4300ADC07D /* ApplicationListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033C6B029870F4300ADC07D /* ApplicationListDelegate.swift */; };
 		B033C6B329870FA100ADC07D /* ApplicationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033C6B229870FA100ADC07D /* ApplicationInfo.swift */; };
-		B033C6B5298717EA00ADC07D /* ApplicationCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033C6B4298717EA00ADC07D /* ApplicationCellVC.swift */; };
+		B033C6B5298717EA00ADC07D /* ApplicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B033C6B4298717EA00ADC07D /* ApplicationCell.swift */; };
 		B034B37C29711BED000CCA89 /* ApplicationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B034B37B29711BED000CCA89 /* ApplicationCell.xib */; };
 		B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */; };
 		B03CE3FA296DDED0002602D3 /* ApplicationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */; };
 		B03CE3FC296DE819002602D3 /* AddApplicationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */; };
 		B03CE3FE296DE822002602D3 /* AddApplication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03CE3FD296DE822002602D3 /* AddApplication.storyboard */; };
-		B03CE400296E80EF002602D3 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03CE3FF296E80EF002602D3 /* DataFile.swift */; };
 		B053085529541FA000909962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085429541FA000909962 /* AppDelegate.swift */; };
 		B053085729541FA000909962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085629541FA000909962 /* SceneDelegate.swift */; };
 		B053085929541FA000909962 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053085829541FA000909962 /* MainVC.swift */; };
@@ -47,13 +46,12 @@
 /* Begin PBXFileReference section */
 		B033C6B029870F4300ADC07D /* ApplicationListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListDelegate.swift; sourceTree = "<group>"; };
 		B033C6B229870FA100ADC07D /* ApplicationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationInfo.swift; sourceTree = "<group>"; };
-		B033C6B4298717EA00ADC07D /* ApplicationCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCellVC.swift; sourceTree = "<group>"; };
+		B033C6B4298717EA00ADC07D /* ApplicationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCell.swift; sourceTree = "<group>"; };
 		B034B37B29711BED000CCA89 /* ApplicationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationCell.xib; sourceTree = "<group>"; };
 		B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListVC.swift; sourceTree = "<group>"; };
 		B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ApplicationList.storyboard; sourceTree = "<group>"; };
 		B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddApplicationVC.swift; sourceTree = "<group>"; };
 		B03CE3FD296DE822002602D3 /* AddApplication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddApplication.storyboard; sourceTree = "<group>"; };
-		B03CE3FF296E80EF002602D3 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
 		B03EDC822980CE0F007630EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B03EDC832980CE0F007630EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B053085129541FA000909962 /* JobKer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobKer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,15 +126,8 @@
 				B033C6B629874E4500ADC07D /* Model */,
 				B053085429541FA000909962 /* AppDelegate.swift */,
 				B053085629541FA000909962 /* SceneDelegate.swift */,
-				B053085829541FA000909962 /* MainVC.swift */,
-				B053085A29541FA000909962 /* Main.storyboard */,
-				B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */,
-				B034B37B29711BED000CCA89 /* ApplicationCell.xib */,
-				B033C6B4298717EA00ADC07D /* ApplicationCellVC.swift */,
-				B03CE3FF296E80EF002602D3 /* DataFile.swift */,
-				B03CE3FD296DE822002602D3 /* AddApplication.storyboard */,
-				B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */,
-				B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */,
+				B088EF53298DEC7600FEDA17 /* UI */,
+				B088EF54298DEC7900FEDA17 /* VC */,
 				B033C6B029870F4300ADC07D /* ApplicationListDelegate.swift */,
 				B053085D29541FA100909962 /* Assets.xcassets */,
 				B053085F29541FA100909962 /* LaunchScreen.storyboard */,
@@ -160,6 +151,28 @@
 				B053087729541FA100909962 /* JobKerUITestsLaunchTests.swift */,
 			);
 			path = JobKerUITests;
+			sourceTree = "<group>";
+		};
+		B088EF53298DEC7600FEDA17 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B03CE3FD296DE822002602D3 /* AddApplication.storyboard */,
+				B053085A29541FA000909962 /* Main.storyboard */,
+				B03CE3F9296DDED0002602D3 /* ApplicationList.storyboard */,
+				B034B37B29711BED000CCA89 /* ApplicationCell.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B088EF54298DEC7900FEDA17 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B053085829541FA000909962 /* MainVC.swift */,
+				B033C6B4298717EA00ADC07D /* ApplicationCell.swift */,
+				B03CE3F7296DDEB1002602D3 /* ApplicationListVC.swift */,
+				B03CE3FB296DE819002602D3 /* AddApplicationVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,11 +317,10 @@
 				B053085929541FA000909962 /* MainVC.swift in Sources */,
 				B03CE3FC296DE819002602D3 /* AddApplicationVC.swift in Sources */,
 				B053085529541FA000909962 /* AppDelegate.swift in Sources */,
-				B033C6B5298717EA00ADC07D /* ApplicationCellVC.swift in Sources */,
+				B033C6B5298717EA00ADC07D /* ApplicationCell.swift in Sources */,
 				B053085729541FA000909962 /* SceneDelegate.swift in Sources */,
 				B033C6B129870F4300ADC07D /* ApplicationListDelegate.swift in Sources */,
 				B03CE3F8296DDEB1002602D3 /* ApplicationListVC.swift in Sources */,
-				B03CE400296E80EF002602D3 /* DataFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
