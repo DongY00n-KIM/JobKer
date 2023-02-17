@@ -49,12 +49,15 @@ extension ApplicationListVC:UITableViewDataSource{
             return UITableViewCell()
         }
         
+        
+        //add cell data.
         let cellData = applicationList[indexPath.row]
+        cell.configureCell(data: cellData, delegate: self)
         cell.positionCell.text = cellData.position
         cell.statusCell.text = cellData.status
-        cell.companyCell.text = cellData.companyName
+        cell.companyCell.text = cellData.name
         cell.dateCell.text = cellData.date
-       
+        
         return cell
     }
 }
@@ -64,4 +67,28 @@ extension ApplicationListVC : ApplicationListDelegate{
         self.applicationList.append(applicationInfo)
         self.applicationListTableView.reloadData()
     }
+    
+    func editBtnTapped(_ selected: ApplicationInfo) {
+        print(#fileID, #function, #line, "- <#comment#>")
+
+        let editApplicationStroyBoard = UIStoryboard(name: "EditApplication", bundle: nil)
+        guard let editApplicationVC = editApplicationStroyBoard.instantiateInitialViewController() as? EditApplicationVC else{
+            return
+        }
+        editApplicationVC.applicationListDelegate = self
+        editApplicationVC.editApplicationInfo = selected
+        self.navigationController?.pushViewController(editApplicationVC, animated: true)
+        print("Here")
+    }
+    
+    func applicationInfoEdited(_ editedApplication: ApplicationInfo) {
+        guard let foundEditIndex = self.applicationList.firstIndex(where: {$0.uuid == editedApplication.uuid}) else{
+            return
+        }
+        self.applicationList[foundEditIndex] = editedApplication
+        self.applicationListTableView.reloadData()
+    }
+    
+    
 }
+

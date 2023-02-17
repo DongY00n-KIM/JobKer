@@ -9,4 +9,6 @@ import Foundation
 
 protocol ApplicationListDelegate{
     func addApplicationInfo(_ applicationInfo: ApplicationInfo)
+    func applicationInfoEdited(_ editedApplication: ApplicationInfo)
+    func editBtnTapped(_ selected: ApplicationInfo)
 }

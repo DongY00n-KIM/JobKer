@@ -56,8 +56,29 @@ class ApplicationCell : UITableViewCell{
     @IBOutlet weak var dateCell: UILabel!
     @IBOutlet weak var editBtnCell: UIButton!
     
+    var delegate: ApplicationListDelegate? = nil
+    var cellData: ApplicationInfo? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         print(#fileID, #function, #line, "- <#comment#>")
+        editBtnCell.addTarget(self, action: #selector(editButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    func configureCell(data: ApplicationInfo, delegate: ApplicationListDelegate){
+        self.cellData = data
+        self.positionCell.text = data.position
+        self.statusCell.text = data.status
+        self.delegate = delegate
+    }
+    
+    @objc fileprivate func editButtonTapped(_ sender: UIButton){
+        print(#fileID, #function, #line, "- <#comment#>")
+
+        if let cellData = cellData{
+            delegate?.editBtnTapped(cellData)
+        }
     }
 }
+
+
