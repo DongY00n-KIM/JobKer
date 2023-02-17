@@ -8,12 +8,13 @@
 import Foundation
 
 struct ApplicationInfo{
-//    var name : String
+    let uuid: UUID = UUID()
+    var name : String
     var position : String
     var status : String
     var type : String
-//    var date : String
-//    var location : String // [String]
+    var date : String
+    var location : String // [String]
     var referral : String
-//    var salary : String
+    var salary : String
 }

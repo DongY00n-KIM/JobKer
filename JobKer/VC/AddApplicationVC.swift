@@ -65,6 +65,8 @@ class AddApplicationVC: UIViewController {
     @IBOutlet weak var positionField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var locationField: UITextField!
+    @IBOutlet weak var salaryField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
     
     //picker vars
     let datePicker = UIDatePicker()
@@ -82,6 +84,9 @@ class AddApplicationVC: UIViewController {
         case type
         case status
         case referral
+        case name
+        case salary
+        case date
     }
     
 //    var selectedApplicationAddInfoType : String? = nil
@@ -106,44 +111,49 @@ class AddApplicationVC: UIViewController {
         referralField.addTarget(self, action: #selector(textFieldTypeSelector(_:)), for: .editingDidBegin)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Add", style: .done, target: self, action: #selector(addResume))
+        
     }
     
     //check what which textfield is selected.
     @objc fileprivate func textFieldTypeSelector(_ textField : UITextField){
         if textField == positionField{
-            print("position Field selected")
             textFieldType = .positions
         }
         else if textField == locationField {
-            print("locationField selected")
             textFieldType = .location
         }
         else if textField == typeField {
-            print("typeField selected")
             textFieldType = .type
         }
         else if textField == statusField {
-            print("statusField Selected")
             textFieldType = .status
         }
         else if textField == referralField {
-            print("referral field selected")
             textFieldType = .referral
         }
         else{
-            print("nil selected")
             textFieldType = nil
         }
         
     }
     
+    //Initialize information to add
     @objc fileprivate func addResume(sender: UIBarButtonItem){
-        print("Add resume")
         guard let positionToAdd = positionField.text,
               let statusToAdd = statusField.text,
               let referralToAdd = referralField.text,
-              let typeToAdd = typeField.text else {return}
-        let applicationToAdd = ApplicationInfo(position: positionToAdd, status: statusToAdd, type: typeToAdd, referral: referralToAdd)
+              let typeToAdd = typeField.text,
+              let nameToAdd = nameField.text,
+              let dateToAdd = dateField.text,
+              let salaryToAdd = salaryField.text,
+              let locationToAdd = locationField.text
+        else {
+            return
+        }
+        
+        let applicationToAdd = ApplicationInfo(name : nameToAdd, position: positionToAdd, status: statusToAdd, type: typeToAdd, date: dateToAdd, location: locationToAdd, referral: referralToAdd, salary: salaryToAdd)
+        
+        
         applicationListDelegate?.addApplicationInfo(applicationToAdd)
         self.navigationController?.popViewController(animated: true)
     }
@@ -174,6 +184,7 @@ extension AddApplicationVC : UIPickerViewDataSource, UIPickerViewDelegate{
         return 0
     }
     
+    //set selected option's index from picker view
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         index = row
     }
@@ -268,7 +279,7 @@ extension AddApplicationVC{
         else if textFieldType == .status {
             statusField.text = status[index]
         }
-        else if textFieldType == .referral {
+        else if textFieldType == .referral{
             referralField.text = referral[index]
         }
         else{
@@ -278,6 +289,8 @@ extension AddApplicationVC{
             dateField.text = dateFormatter.string(from: datePicker.date)
         }
         self.view.endEditing(true)
+        //reset picker view index to 0
+        pickerView.selectRow(0, inComponent: 0, animated: false)
         index = 0
         textFieldType = nil
     }

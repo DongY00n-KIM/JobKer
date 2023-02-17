@@ -23,9 +23,7 @@ class ApplicationListVC: UIViewController {
         
         applicationListTableView.dataSource = self
         
-        print("ApplicationCellNib")
-//        let applicationCellNib = UINib(nibName: "ApplicationCellVC", bundle: .main)
-        applicationListTableView.register(ApplicationCellVC.nibID, forCellReuseIdentifier: ApplicationCellVC.cellID)
+        applicationListTableView.register(ApplicationCell.nibID, forCellReuseIdentifier: ApplicationCell.cellID)
     }
     
     @objc fileprivate func openAddApplication(sender: UIBarButtonItem){
@@ -45,30 +43,52 @@ extension ApplicationListVC:UITableViewDataSource{
     // how many types of cell
     // cell setting?
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cellID = String(describing: ApplicationCellVC.self)
         
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationCellVC.cellID, for:indexPath) as? ApplicationCellVC else {
-//            return UITableViewCell()
-//        }
-        print("Application List VC data source")
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationCellVC.cellID, for:indexPath) as? ApplicationCellVC else {
+        print(#fileID, #function, #line, "- <#comment#>")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ApplicationCell.cellID, for:indexPath) as? ApplicationCell else {
             return UITableViewCell()
         }
-        print("two List VC data source")
         
+        
+        //add cell data.
         let cellData = applicationList[indexPath.row]
+        cell.configureCell(data: cellData, delegate: self)
         cell.positionCell.text = cellData.position
         cell.statusCell.text = cellData.status
-       
+        cell.companyCell.text = cellData.name
+        cell.dateCell.text = cellData.date
+        
         return cell
     }
 }
 
 extension ApplicationListVC : ApplicationListDelegate{
     func addApplicationInfo(_ applicationInfo: ApplicationInfo) {
-        print("addApplicationInfo")
-        
         self.applicationList.append(applicationInfo)
         self.applicationListTableView.reloadData()
     }
+    
+    func editBtnTapped(_ selected: ApplicationInfo) {
+        print(#fileID, #function, #line, "- <#comment#>")
+
+        let editApplicationStroyBoard = UIStoryboard(name: "EditApplication", bundle: nil)
+        guard let editApplicationVC = editApplicationStroyBoard.instantiateInitialViewController() as? EditApplicationVC else{
+            return
+        }
+        editApplicationVC.applicationListDelegate = self
+        editApplicationVC.editApplicationInfo = selected
+        self.navigationController?.pushViewController(editApplicationVC, animated: true)
+        print("Here")
+    }
+    
+    func applicationInfoEdited(_ editedApplication: ApplicationInfo) {
+        guard let foundEditIndex = self.applicationList.firstIndex(where: {$0.uuid == editedApplication.uuid}) else{
+            return
+        }
+        self.applicationList[foundEditIndex] = editedApplication
+        self.applicationListTableView.reloadData()
+    }
+    
+    
 }
+
