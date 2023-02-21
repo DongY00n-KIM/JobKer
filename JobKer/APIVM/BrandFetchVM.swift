@@ -10,6 +10,7 @@
 import Foundation
 import Alamofire
 
+
 struct BrandFetchResponse : Decodable{
     var name : String
     var domain : String
@@ -62,6 +63,28 @@ struct FormatElement : Codable {
 }
 
 class BrandFetchVM : ObservableObject{
+    let session = URLSession.shared
     let baseURL : String = "https://api.brandfetch.io/v2/brands/"
     let com : String = ".com"
+    let key : String = "Bearer j6DbKRjXTsQT3pHHg0KIuCk2BUI/ZZUItohrSwvR2Us="
+    
+    func getResponse(_ companyName : String, completion : @escaping (LogoElement) -> Void){
+//        let reqURL = baseURL + companyName + com
+        print(#fileID, #function, #line, "- <#comment#>")
+
+        let reqURL = baseURL + "apple" + com
+        
+        AF.request(reqURL, method: .get, encoding: JSONEncoding.default, headers: ["Authorization" : key ]).responseDecodable(of: BrandFetchResponse.self, completionHandler: {
+            response in
+            switch response.result{
+            case .success(let success):
+                completion(success.logos)
+                
+            case .failure(let fail):
+                print(fail)
+            }
+        })
+    }
+
 }
+    

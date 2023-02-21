@@ -72,6 +72,7 @@ class AddApplicationVC: UIViewController {
     let datePicker = UIDatePicker()
     let pickerView = UIPickerView()
     var index : Int = 0
+    let apiVM : BrandFetchVM = BrandFetchVM()
     
     let loc = Locale(identifier: "en")
 //    var applicationListDelegate : ApplicationListDelegate? = nil
