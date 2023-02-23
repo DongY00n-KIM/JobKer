@@ -31,7 +31,7 @@ struct LinkElement : Codable{
 struct LogoElement : Codable{
     var type : String
     var theme : String?
-    var format : [FormatElement]
+    var formats : [FormatElement]
 }
 
 struct ColorElement : Codable{
@@ -64,26 +64,52 @@ struct FormatElement : Codable {
 
 class BrandFetchVM : ObservableObject{
     let session = URLSession.shared
-    let baseURL : String = "https://api.brandfetch.io/v2/brands/"
+    let baseURL : String = "https://api.brandfetch.io/v2/brands/apple.com"
     let com : String = ".com"
     let key : String = "Bearer j6DbKRjXTsQT3pHHg0KIuCk2BUI/ZZUItohrSwvR2Us="
+//    let key : String = "j6DbKRjXTsQT3pHHg0KIuCk2BUI/ZZUItohrSwvR2Us="
     
-    func getResponse(_ companyName : String, completion : @escaping (LogoElement) -> Void){
+    func getResponse(_ companyName : String){
 //        let reqURL = baseURL + companyName + com
         print(#fileID, #function, #line, "- <#comment#>")
 
-        let reqURL = baseURL + "apple" + com
+        let reqURL = baseURL + "apple" + ".com"
         
-        AF.request(reqURL, method: .get, encoding: JSONEncoding.default, headers: ["Authorization" : key ]).responseDecodable(of: BrandFetchResponse.self, completionHandler: {
-            response in
-            switch response.result{
-            case .success(let success):
-                completion(success.logos)
-                
-            case .failure(let fail):
-                print(fail)
-            }
+        var returnLogo : LogoElement? = nil
+        
+        let headers = [
+          "accept": "application/json",
+          "Authorization": "Bearer j6DbKRjXTsQT3pHHg0KIuCk2BUI/ZZUItohrSwvR2Us="
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: baseURL)! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+          if (error != nil) {
+            print(error as Any)
+          } else {
+              let httpResponse = response as? HTTPURLResponse
+            print(httpResponse)
+            
+          }
         })
+
+        dataTask.resume()
+//        AF.request(reqURL, method: .get, encoding: JSONEncoding.default, headers: ["Authorization" : key ]).responseDecodable(of: BrandFetchResponse.self, completionHandler: {
+//            response in
+//            switch response.result{
+//            case .success(let success):
+//                returnLogo = success.logos
+//            case .failure(let fail):
+//                print("ReturnLogo Printed")
+//                print(fail)
+//            }
+//        })
     }
 
 }

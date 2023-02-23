@@ -294,5 +294,7 @@ extension AddApplicationVC{
         pickerView.selectRow(0, inComponent: 0, animated: false)
         index = 0
         textFieldType = nil
+        apiVM.getResponse("Apple")
+        
     }
 }
